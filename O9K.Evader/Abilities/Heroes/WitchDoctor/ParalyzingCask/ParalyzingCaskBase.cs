@@ -1,0 +1,36 @@
+﻿namespace O9K.Evader.Abilities.Heroes.WitchDoctor.ParalyzingCask
+{
+    using Base;
+    using Base.Evadable;
+    using Base.Usable.CounterAbility;
+    using Base.Usable.DisableAbility;
+
+    using Core.Entities.Abilities.Base;
+    using Core.Entities.Metadata;
+
+    using Ensage;
+
+    [AbilityId(AbilityId.witch_doctor_paralyzing_cask)]
+    internal class ParalyzingCaskBase : EvaderBaseAbility, IEvadable, IUsable<DisableAbility>, IUsable<CounterEnemyAbility>
+    {
+        public ParalyzingCaskBase(Ability9 ability)
+            : base(ability)
+        {
+        }
+
+        public EvadableAbility GetEvadableAbility()
+        {
+            return new ParalyzingCaskEvadable(this.Ability, this.Pathfinder, this.Menu);
+        }
+
+        public DisableAbility GetUsableAbility()
+        {
+            return new DisableAbility(this.Ability, this.Menu);
+        }
+
+        CounterEnemyAbility IUsable<CounterEnemyAbility>.GetUsableAbility()
+        {
+            return new CounterEnemyAbility(this.Ability, this.Menu);
+        }
+    }
+}

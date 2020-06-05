@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D48B94DF-72D8-4BFB-91A7-36FB7DE10FCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>O9K.Hud</RootNamespace>
+    <AssemblyName>O9K.Hud</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ensage">
+      <HintPath>C:\BanIsComing\References\Ensage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ensage.SDK">
+      <HintPath>C:\BanIsComing\References\Ensage.SDK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="O9K.Core">
+      <HintPath>..\O9K.Core\bin\Debug\O9K.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>C:\BanIsComing\References\SharpDX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>C:\BanIsComing\References\SharpDX.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Helpers\ConsoleCommands.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\OutpostNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\PingNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\StolenAbilityNotification.cs" />
+    <Compile Include="MainMenu\IHudMenu.cs" />
+    <Compile Include="Modules\IHudModule.cs" />
+    <Compile Include="MainMenu\HudMenu.cs" />
+    <Compile Include="Helpers\Drawer.cs" />
+    <Compile Include="Helpers\MenuSimpleVectorSlider.cs" />
+    <Compile Include="Helpers\MenuVectorSlider.cs" />
+    <Compile Include="Helpers\Minimap.cs" />
+    <Compile Include="Helpers\Notificator\INotificator.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\AbilityHeroNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\AbilityNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\HealthNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notificator.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\Notification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\PurchaseNotification.cs" />
+    <Compile Include="Helpers\Notificator\Notifications\RuneNotification.cs" />
+    <Compile Include="Helpers\TextureLoader.cs" />
+    <Compile Include="Helpers\TopPanel.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Base\DrawableAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Base\DrawableUnitAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Base\EnemyHero.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Base\IDrawableAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\AbilityFullData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\AbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Blink\BlinkItemAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Cleave\CleaveAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Blink\BlinkAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\FireRemnant\DrawableFireRemnantAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\FireRemnant\FireRemnantAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Item\NoOwnerItemData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Maelstorm\MaelstormAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Poof\PoofAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\RemoteMines\DrawableRemoteMinesAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\RemoteMines\RemoteMinesAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Smoke\SmokeAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Base\SimpleDrawableAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\ThinkerAbility\ThinkerUnitAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Wards\DrawableWardAbility.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Wards\WardAbilityData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Wisp\DrawableWispUnit.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\Abilities\Data\UniqueAbilities\Wisp\WispUnitData.cs" />
+    <Compile Include="Modules\Map\AbilityMonitor\AbilityManager.cs" />
+    <Compile Include="Modules\Map\Predictions\Heroes\Heroes.cs" />
+    <Compile Include="Modules\Map\Predictions\JungleStacks\JungleStacks.cs" />
+    <Compile Include="Modules\Map\Predictions\LaneCreeps\CreepWave.cs" />
+    <Compile Include="Modules\Map\Predictions\LaneCreeps\LaneCreeps.cs" />
+    <Compile Include="Modules\Map\Predictions\LaneCreeps\LaneData\LanePaths.cs" />
+    <Compile Include="Modules\Map\Predictions\LaneCreeps\LaneData\LanePosition.cs" />
+    <Compile Include="Modules\Map\Runes\AllyBottle.cs" />
+    <Compile Include="Modules\Map\Runes\BountyRunes.cs" />
+    <Compile Include="Modules\Map\Runes\PowerRunes.cs" />
+    <Compile Include="Modules\Map\Runes\RuneData.cs" />
+    <Compile Include="Modules\Notifications\Health.cs" />
+    <Compile Include="Modules\Notifications\JungleCamps.cs" />
+    <Compile Include="Modules\Notifications\Outposts.cs" />
+    <Compile Include="Modules\Notifications\StolenAbility.cs" />
+    <Compile Include="Modules\Notifications\UsableItems.cs" />
+    <Compile Include="Modules\Particles\Abilities\Assassinate.cs" />
+    <Compile Include="Modules\Particles\Abilities\ChargeOfDarkness.cs" />
+    <Compile Include="Modules\Particles\Abilities\DarkPact.cs" />
+    <Compile Include="Modules\Particles\Abilities\EyesInTheForest.cs" />
+    <Compile Include="Modules\Particles\Abilities\Infest.cs" />
+    <Compile Include="Modules\Particles\Abilities\LinkensSphere.cs" />
+    <Compile Include="Modules\Particles\Abilities\Snowball.cs" />
+    <Compile Include="Modules\Particles\Abilities\Track.cs" />
+    <Compile Include="Modules\Particles\AbilityModule.cs" />
+    <Compile Include="Modules\Particles\Abilities\CallDown.cs" />
+    <Compile Include="Modules\Particles\Abilities\EMP.cs" />
+    <Compile Include="Modules\Particles\Abilities\IceBlast.cs" />
+    <Compile Include="Modules\Particles\Abilities\LightStrikeArray.cs" />
+    <Compile Include="Modules\Particles\Abilities\MortimerKisses.cs" />
+    <Compile Include="Modules\Particles\Abilities\SplitEarth.cs" />
+    <Compile Include="Modules\Particles\Abilities\SunStrike.cs" />
+    <Compile Include="Modules\Particles\Abilities\Torrent.cs" />
+    <Compile Include="Modules\Particles\ParticleAbilityManager.cs" />
+    <Compile Include="Modules\Particles\Abilities\DarkRift.cs" />
+    <Compile Include="Modules\Particles\Units\HeroDeny.cs" />
+    <Compile Include="Modules\Particles\Units\TowerDeny.cs" />
+    <Compile Include="Modules\Particles\Units\TowerTarget.cs" />
+    <Compile Include="Modules\Screen\Awareness\Awareness.cs" />
+    <Compile Include="Modules\Screen\Awareness\Heroes\AwarenessHero.cs" />
+    <Compile Include="Modules\Screen\Panels\ItemPanel.cs" />
+    <Compile Include="Modules\Map\Farm.cs" />
+    <Compile Include="Modules\Map\Predictions\Courier.cs" />
+    <Compile Include="Modules\Particles\Units\TrueSight.cs" />
+    <Compile Include="Modules\Map\Teleports\Teleport.cs" />
+    <Compile Include="Modules\Map\Teleports\TeleportMonitor.cs" />
+    <Compile Include="Modules\Screen\Time\AbilityHitTimings\AbilityHitTime.cs" />
+    <Compile Include="Modules\Screen\Time\AbilityHitTimings\AbilityTime.cs" />
+    <Compile Include="Modules\Screen\Time\MoveTime.cs" />
+    <Compile Include="Modules\Screen\Time\SystemTime.cs" />
+    <Compile Include="Modules\Screen\Panels\NetWorthPanel.cs" />
+    <Compile Include="Modules\Notifications\Items.cs" />
+    <Compile Include="Modules\Notifications\Runes.cs" />
+    <Compile Include="Modules\Screen\Timers\GlyphTimer.cs" />
+    <Compile Include="Modules\Screen\Timers\RoshanTimer.cs" />
+    <Compile Include="Modules\Screen\Timers\ScanTimer.cs" />
+    <Compile Include="Modules\Screen\Zoom.cs" />
+    <Compile Include="Modules\TopPanel\NetWorth.cs" />
+    <Compile Include="Modules\TopPanel\Status\HeroStatus.cs" />
+    <Compile Include="Modules\TopPanel\Status\TopPanelUnit.cs" />
+    <Compile Include="Modules\Unique\MorphlingAbilities\Abilities\IMorphlingAbility.cs" />
+    <Compile Include="Modules\Unique\MorphlingAbilities\Abilities\MorphlingAbility.cs" />
+    <Compile Include="Modules\Unique\MorphlingAbilities\Abilities\ReplicateTimer.cs" />
+    <Compile Include="Modules\Units\Abilities\HudEntities\Abilities\HudAbility.cs" />
+    <Compile Include="Modules\Units\Abilities\HudEntities\Units\HudUnit.cs" />
+    <Compile Include="Modules\Particles\Units\Illusion.cs" />
+    <Compile Include="Modules\Units\Abilities\Abilities.cs" />
+    <Compile Include="Modules\Units\HpMpBars\HpMpUnit.cs" />
+    <Compile Include="Modules\Units\Information\Information.cs" />
+    <Compile Include="Modules\Units\Information\InformationUnit.cs" />
+    <Compile Include="Modules\Units\HpMpBars\MpHpBars.cs" />
+    <Compile Include="Modules\Units\Modifiers\DrawableModifier.cs" />
+    <Compile Include="Modules\Units\Modifiers\Modifiers.cs" />
+    <Compile Include="Modules\Units\Modifiers\ModifiersData.cs" />
+    <Compile Include="Modules\Units\Modifiers\ModifierUnit.cs" />
+    <Compile Include="Modules\Unique\MorphlingAbilities\MorphlingAbilities.cs" />
+    <Compile Include="Modules\Units\Ranges\Abilities\ExperienceRange.cs" />
+    <Compile Include="Modules\Units\VisibleByEnemy.cs" />
+    <Compile Include="Modules\Units\Ranges\Abilities\AttackRange.cs" />
+    <Compile Include="Modules\Units\Ranges\Abilities\IRange.cs" />
+    <Compile Include="Modules\Units\Ranges\Abilities\AbilityRange.cs" />
+    <Compile Include="Modules\Units\Ranges\Abilities\RangeUnit.cs" />
+    <Compile Include="Modules\Units\Ranges\Ranges.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rune_bounty.png" />
+    <EmbeddedResource Include="Resources\rune_regen.png" />
+    <EmbeddedResource Include="Resources\rune_arcane_minimap.png" />
+    <EmbeddedResource Include="Resources\rune_double_damage_minimap.png" />
+    <EmbeddedResource Include="Resources\rune_haste_minimap.png" />
+    <EmbeddedResource Include="Resources\rune_illusion_minimap.png" />
+    <EmbeddedResource Include="Resources\rune_invisibility_minimap.png" />
+    <EmbeddedResource Include="Resources\rune_regeneration_minimap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\modifier_truesight.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

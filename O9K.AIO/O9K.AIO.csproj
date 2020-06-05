@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79F86381-1C5C-450A-888C-749049D46AED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>O9K.AIO</RootNamespace>
+    <AssemblyName>O9K.AIO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ensage">
+      <HintPath>C:\BanIsComing\References\Ensage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ensage.SDK">
+      <HintPath>C:\BanIsComing\References\Ensage.SDK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="O9K.Core">
+      <HintPath>..\O9K.Core\bin\Debug\O9K.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PlaySharp.Toolkit">
+      <HintPath>C:\BanIsComing\References\PlaySharp.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>C:\BanIsComing\References\SharpDX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>C:\BanIsComing\References\SharpDX.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\AbilityHelper.cs" />
+    <Compile Include="Abilities\AoeAbility.cs" />
+    <Compile Include="Abilities\BuffAbility.cs" />
+    <Compile Include="Abilities\DisableAbility.cs" />
+    <Compile Include="Abilities\DebuffAbility.cs" />
+    <Compile Include="Abilities\BlinkAbility.cs" />
+    <Compile Include="Abilities\Items\BlinkDaggerAOE.cs" />
+    <Compile Include="Abilities\Items\Bloodthorn.cs" />
+    <Compile Include="Abilities\Items\EtherealBlade.cs" />
+    <Compile Include="Abilities\Items\EulsScepterOfDivinity.cs" />
+    <Compile Include="Abilities\Items\ForceStaff.cs" />
+    <Compile Include="Abilities\Items\HurricanePike.cs" />
+    <Compile Include="Abilities\Items\MantaStyle.cs" />
+    <Compile Include="Abilities\Items\Nullifier.cs" />
+    <Compile Include="Abilities\Items\SpeedBuffAbility.cs" />
+    <Compile Include="Abilities\Items\ShivasGuard.cs" />
+    <Compile Include="Abilities\KillStealNukeAbility.cs" />
+    <Compile Include="Abilities\Menus\UsableAbilityHitCountMenu.cs" />
+    <Compile Include="Abilities\NukeAbility.cs" />
+    <Compile Include="Abilities\ShieldAbility.cs" />
+    <Compile Include="Abilities\MoveBuffAbility.cs" />
+    <Compile Include="Abilities\TargetableAbility.cs" />
+    <Compile Include="Abilities\UntargetableAbility.cs" />
+    <Compile Include="Abilities\UsableAbility.cs" />
+    <Compile Include="Abilities\Menus\UsableAbilityMenu.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="FailSafe\FailSafe.cs" />
+    <Compile Include="FailSafe\FailSafeMenu.cs" />
+    <Compile Include="Heroes\Alchemist\Abilities\UnstableConcoction.cs" />
+    <Compile Include="Heroes\Alchemist\AlchemistBase.cs" />
+    <Compile Include="Heroes\Alchemist\Units\Alchemist.cs" />
+    <Compile Include="Heroes\AncientApparition\Abilities\ChillingTouch.cs" />
+    <Compile Include="Heroes\AncientApparition\Abilities\IceBlast.cs" />
+    <Compile Include="Heroes\AncientApparition\Abilities\IceBlastMenu.cs" />
+    <Compile Include="Heroes\AncientApparition\Abilities\IceVortex.cs" />
+    <Compile Include="Heroes\AncientApparition\AncientApparitionBase.cs" />
+    <Compile Include="Heroes\AncientApparition\Units\AncientApparition.cs" />
+    <Compile Include="Heroes\AntiMage\Abilities\AntiMageBlink.cs" />
+    <Compile Include="Heroes\AntiMage\Abilities\Counterspell.cs" />
+    <Compile Include="Heroes\AntiMage\AntiMageBase.cs" />
+    <Compile Include="Heroes\AntiMage\Units\AntiMage.cs" />
+    <Compile Include="Heroes\Axe\Abilities\CullingBlade.cs" />
+    <Compile Include="Heroes\Axe\Abilities\MeteorHammerAxe.cs" />
+    <Compile Include="Heroes\Axe\AxeBase.cs" />
+    <Compile Include="Heroes\Axe\Units\Axe.cs" />
+    <Compile Include="Heroes\Bloodseeker\Abilities\BloodRite.cs" />
+    <Compile Include="Heroes\Bloodseeker\BloodseekerBase.cs" />
+    <Compile Include="Heroes\Bloodseeker\Units\Bloodseeker.cs" />
+    <Compile Include="Heroes\Brewmaster\Abilities\Cyclone.cs" />
+    <Compile Include="Heroes\Brewmaster\Abilities\Dispel.cs" />
+    <Compile Include="Heroes\Brewmaster\Abilities\PrimalSplit.cs" />
+    <Compile Include="Heroes\Brewmaster\Abilities\WindWalk.cs" />
+    <Compile Include="Heroes\Brewmaster\BrewmasterBase.cs" />
+    <Compile Include="Heroes\Brewmaster\Modes\CycloneMode.cs" />
+    <Compile Include="Heroes\Brewmaster\Units\Brewmaster.cs" />
+    <Compile Include="Heroes\Brewmaster\Units\Earth.cs" />
+    <Compile Include="Heroes\Brewmaster\Units\Storm.cs" />
+    <Compile Include="Heroes\ChaosKnight\ChaosKnightBase.cs" />
+    <Compile Include="Heroes\ChaosKnight\Units\ChaosKnight.cs" />
+    <Compile Include="Heroes\CrystalMaiden\Abilities\BlinkDaggerCM.cs" />
+    <Compile Include="Heroes\CrystalMaiden\Abilities\FreezingField.cs" />
+    <Compile Include="Heroes\CrystalMaiden\CrystalMaidenBase.cs" />
+    <Compile Include="Heroes\CrystalMaiden\Units\CrystalMaiden.cs" />
+    <Compile Include="Heroes\DarkSeer\Abilities\IonShell.cs" />
+    <Compile Include="Heroes\DarkSeer\Abilities\Vacuum.cs" />
+    <Compile Include="Heroes\DarkSeer\Abilities\WallOfReplica.cs" />
+    <Compile Include="Heroes\DarkSeer\DarkSeerBase.cs" />
+    <Compile Include="Heroes\DarkSeer\Units\DarkSeer.cs" />
+    <Compile Include="Heroes\Dazzle\Abilities\ShadowWave.cs" />
+    <Compile Include="Heroes\Dazzle\DazzleBase.cs" />
+    <Compile Include="Heroes\Dazzle\Units\Dazzle.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Buffs\Unique\NecroBuffAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\Unique\StoneFormDisable.cs" />
+    <Compile Include="Heroes\Earthshaker\Abilities\EnchantTotem.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\BoulderSmash.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\GeomagneticGrip.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\RollingBoulder.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\RollingBoulderBlink.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\StoneRemnant.cs" />
+    <Compile Include="Heroes\EarthSpirit\Abilities\StoneRemnantBlink.cs" />
+    <Compile Include="Heroes\EarthSpirit\EarthSpiritBase.cs" />
+    <Compile Include="Heroes\EarthSpirit\Modes\RollSmashMode.cs" />
+    <Compile Include="Heroes\EarthSpirit\Modes\RollSmashModeMenu.cs" />
+    <Compile Include="Heroes\EarthSpirit\Units\EarthSpirit.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\ActivateFireRemnant.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\ActivateFireRemnantBlink.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\FireRemnant.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\FireRemnantBlink.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\SearingChains.cs" />
+    <Compile Include="Heroes\EmberSpirit\Abilities\SleightOfFist.cs" />
+    <Compile Include="Heroes\EmberSpirit\EmberSpiritBase.cs" />
+    <Compile Include="Heroes\EmberSpirit\Modes\AutoChainsMode.cs" />
+    <Compile Include="Heroes\EmberSpirit\Modes\AutoChainsModeMenu.cs" />
+    <Compile Include="Heroes\EmberSpirit\Units\EmberSpirit.cs" />
+    <Compile Include="Heroes\FacelessVoid\Abilities\Chronosphere.cs" />
+    <Compile Include="Heroes\FacelessVoid\Abilities\TimeDilation.cs" />
+    <Compile Include="Heroes\FacelessVoid\Abilities\TimeWalk.cs" />
+    <Compile Include="Heroes\FacelessVoid\FacelessVoidBase.cs" />
+    <Compile Include="Heroes\FacelessVoid\Units\FacelessVoid.cs" />
+    <Compile Include="Heroes\Grimstroke\Abilities\GrimstrokeDagon.cs" />
+    <Compile Include="Heroes\Grimstroke\Abilities\InkSwell.cs" />
+    <Compile Include="Heroes\Grimstroke\Abilities\Soulbind.cs" />
+    <Compile Include="Heroes\Grimstroke\GrimstrokeBase.cs" />
+    <Compile Include="Heroes\Grimstroke\Units\Grimstroke.cs" />
+    <Compile Include="Heroes\Juggernaut\Abililities\Omnislash.cs" />
+    <Compile Include="Heroes\Juggernaut\Modes\ControlWardMode.cs" />
+    <Compile Include="Heroes\Base\BaseHero.cs" />
+    <Compile Include="Heroes\DarkWillow\Abilities\BrambleMaze.cs" />
+    <Compile Include="Heroes\DarkWillow\Abilities\EulsScepterOfDivinityDarkWillow.cs" />
+    <Compile Include="Heroes\DarkWillow\Abilities\ShadowRealm.cs" />
+    <Compile Include="Heroes\DarkWillow\DarkWillowBase.cs" />
+    <Compile Include="Heroes\DarkWillow\Units\DarkWillow.cs" />
+    <Compile Include="Heroes\Disruptor\Abilities\KineticField.cs" />
+    <Compile Include="Heroes\Disruptor\Abilities\StaticStorm.cs" />
+    <Compile Include="Heroes\Disruptor\DisruptorBase.cs" />
+    <Compile Include="Heroes\Disruptor\Modes\GlimpseTrackerMode.cs" />
+    <Compile Include="Heroes\Disruptor\Units\Disruptor.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Debuffs\Unique\EtherealBladeDebuff.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\OldAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Blinks\OldBlinkAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Blinks\BlinkAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Blinks\Unique\ForceStaffBlink.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Buffs\OldBuffAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Buffs\BuffAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Buffs\Unique\MantaStyleBuff.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Debuffs\OldDebuffAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Debuffs\DebuffAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Debuffs\Unique\ShrapnelDebuff.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\OldDisableAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\DisableAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\Unique\BrambleMazeDisable.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\Unique\DismemberDisable.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Disables\Unique\EulsDisable.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Harasses\OldHarassAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Harasses\HarassAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\IOldAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\OldNukeAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\NukeAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\AssassinateNuke.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\IceShardsNUke.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\ManaBurnNuke.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\MysticFlareNukeAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\ShadowRealmNukeAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Nukes\Unique\SoulAssumptionNukeAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Shields\OldShieldAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Shields\ShieldAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Specials\OldSpecialAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Specials\SpecialAbilityGroup.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\Specials\Unique\HurricanePikeSpecial.cs" />
+    <Compile Include="Heroes\Dynamic\Abilities\OldUsableAbility.cs" />
+    <Compile Include="Heroes\Dynamic\Modes\DynamicComboMode.cs" />
+    <Compile Include="Heroes\Dynamic\Units\DynamicUnit.cs" />
+    <Compile Include="Heroes\Earthshaker\Abilities\BlinkDaggerShaker.cs" />
+    <Compile Include="Heroes\Earthshaker\Abilities\EchoSlam.cs" />
+    <Compile Include="Heroes\Earthshaker\Abilities\Fissure.cs" />
+    <Compile Include="Heroes\Earthshaker\Modes\EarthshakerComboModeMenu.cs" />
+    <Compile Include="Heroes\Earthshaker\Modes\EarthshakerEchoSlamComboModeMenu.cs" />
+    <Compile Include="Heroes\Earthshaker\Modes\EchoSlamMode.cs" />
+    <Compile Include="Heroes\Earthshaker\Units\Earthshaker.cs" />
+    <Compile Include="Heroes\Earthshaker\EarthshakerBase.cs" />
+    <Compile Include="Heroes\ElderTitan\ElderTitanBase.cs" />
+    <Compile Include="Heroes\ElderTitan\Units\AstralSpirit.cs" />
+    <Compile Include="Heroes\ElderTitan\Units\ElderTitan.cs" />
+    <Compile Include="Heroes\Enigma\Abilities\BlackHole.cs" />
+    <Compile Include="Heroes\Enigma\Abilities\BlinkDaggerEnigma.cs" />
+    <Compile Include="Heroes\Enigma\EnigmaBase.cs" />
+    <Compile Include="Heroes\Enigma\Units\Enigma.cs" />
+    <Compile Include="Heroes\Gyrocopter\Abilities\FlakCannon.cs" />
+    <Compile Include="Heroes\Gyrocopter\GyrocopterBase.cs" />
+    <Compile Include="Heroes\Gyrocopter\Units\Gyrocopter.cs" />
+    <Compile Include="Heroes\Juggernaut\Abililities\HealingWard.cs" />
+    <Compile Include="Heroes\Juggernaut\JuggernautBase.cs" />
+    <Compile Include="Heroes\Juggernaut\Units\Juggernaut.cs" />
+    <Compile Include="Heroes\Kunkka\Abilities\Ghostship.cs" />
+    <Compile Include="Heroes\Kunkka\Abilities\Torrent.cs" />
+    <Compile Include="Heroes\Kunkka\Abilities\XMarkOnlyMenu.cs" />
+    <Compile Include="Heroes\Kunkka\Abilities\XMark.cs" />
+    <Compile Include="Heroes\Kunkka\KunkkaBase.cs" />
+    <Compile Include="Heroes\Kunkka\Modes\AutoReturnMode.cs" />
+    <Compile Include="Heroes\Kunkka\Modes\TorrentStackMode.cs" />
+    <Compile Include="Heroes\Kunkka\Units\Kunkka.cs" />
+    <Compile Include="Heroes\LegionCommander\Abilities\Duel.cs" />
+    <Compile Include="Heroes\LegionCommander\Abilities\LegionBlink.cs" />
+    <Compile Include="Heroes\LegionCommander\Abilities\OverwhelmingOdds.cs" />
+    <Compile Include="Heroes\LegionCommander\LegionCommanderBase.cs" />
+    <Compile Include="Heroes\LegionCommander\Units\LegionCommander.cs" />
+    <Compile Include="Heroes\SandKing\Abilities\Burrowstrike.cs" />
+    <Compile Include="Heroes\Leshrac\Abilities\DiabolicEdict.cs" />
+    <Compile Include="Heroes\Leshrac\Abilities\PulseNova.cs" />
+    <Compile Include="Heroes\Leshrac\Abilities\SplitEarth.cs" />
+    <Compile Include="Heroes\Leshrac\LeshracBase.cs" />
+    <Compile Include="Heroes\Leshrac\Units\Leshrac.cs" />
+    <Compile Include="Heroes\Lina\LinaBase.cs" />
+    <Compile Include="Heroes\Lina\Units\Lina.cs" />
+    <Compile Include="Heroes\Lion\Abilities\ManaDrain.cs" />
+    <Compile Include="Heroes\Lion\LionBase.cs" />
+    <Compile Include="Heroes\Lion\Units\Lion.cs" />
+    <Compile Include="Heroes\Magnus\Abilities\BlinkDaggerMagnus.cs" />
+    <Compile Include="Heroes\Magnus\Abilities\ReversePolarity.cs" />
+    <Compile Include="Heroes\Magnus\Abilities\Shockwave.cs" />
+    <Compile Include="Heroes\Magnus\Abilities\Skewer.cs" />
+    <Compile Include="Heroes\Magnus\Abilities\SkewerMenu.cs" />
+    <Compile Include="Heroes\Magnus\MagnusBase.cs" />
+    <Compile Include="Heroes\Magnus\Modes\BlinkSkewerMode.cs" />
+    <Compile Include="Heroes\Magnus\Modes\BlinkSkewerModeMenu.cs" />
+    <Compile Include="Heroes\Magnus\Units\Magnus.cs" />
+    <Compile Include="Heroes\Mars\Abilities\ArenaOfBlood.cs" />
+    <Compile Include="Heroes\Mars\Abilities\GodsRebuke.cs" />
+    <Compile Include="Heroes\Mars\Abilities\SpearOfMars.cs" />
+    <Compile Include="Heroes\Mars\MarsBase.cs" />
+    <Compile Include="Heroes\Mars\Units\Mars.cs" />
+    <Compile Include="Heroes\Mirana\MiranaBase.cs" />
+    <Compile Include="Heroes\Mirana\Units\Mirana.cs" />
+    <Compile Include="Heroes\MonkeyKing\Abilities\PrimalSpring.cs" />
+    <Compile Include="Heroes\MonkeyKing\Abilities\TreeDance.cs" />
+    <Compile Include="Heroes\MonkeyKing\Abilities\WukongsCommand.cs" />
+    <Compile Include="Heroes\MonkeyKing\MonkeyKingBase.cs" />
+    <Compile Include="Heroes\MonkeyKing\Units\MonkeyKing.cs" />
+    <Compile Include="Heroes\Morphling\Abilities\Morph.cs" />
+    <Compile Include="Heroes\Morphling\Abilities\Replicate.cs" />
+    <Compile Include="Heroes\Morphling\Abilities\Wave.cs" />
+    <Compile Include="Heroes\Necrophos\NecrophosBase.cs" />
+    <Compile Include="Heroes\Necrophos\Units\Necrophos.cs" />
+    <Compile Include="Heroes\Pangolier\Abilities\BlinkDaggerPangolier.cs" />
+    <Compile Include="Heroes\Pangolier\Abilities\RollingThunder.cs" />
+    <Compile Include="Heroes\Pangolier\Abilities\ShieldCrash.cs" />
+    <Compile Include="Heroes\Pangolier\Abilities\Swashbuckle.cs" />
+    <Compile Include="Heroes\Pangolier\Abilities\SwashbuckleBlink.cs" />
+    <Compile Include="Heroes\PhantomLancer\Abilities\Doppelganger.cs" />
+    <Compile Include="Heroes\PhantomLancer\PhantomLancerBase.cs" />
+    <Compile Include="Heroes\PhantomLancer\Units\PhantomLancer.cs" />
+    <Compile Include="Heroes\Phoenix\Modes\SunRayAllyMode.cs" />
+    <Compile Include="Heroes\Pangolier\PangolierBase.cs" />
+    <Compile Include="Heroes\Pangolier\Units\Pangolier.cs" />
+    <Compile Include="Heroes\Phoenix\Abilities\FireSpirits.cs" />
+    <Compile Include="Heroes\Phoenix\Abilities\IcarusDive.cs" />
+    <Compile Include="Heroes\Phoenix\Abilities\SunRay.cs" />
+    <Compile Include="Heroes\Phoenix\Abilities\Supernova.cs" />
+    <Compile Include="Heroes\Phoenix\PhoenixBase.cs" />
+    <Compile Include="Heroes\Phoenix\Units\Phoenix.cs" />
+    <Compile Include="Heroes\Pudge\Abilities\MeatHookMenu.cs" />
+    <Compile Include="Heroes\Pugna\PugnaBase.cs" />
+    <Compile Include="Heroes\Pugna\Units\Pugna.cs" />
+    <Compile Include="Heroes\QueenOfPain\Abilities\BlinkQueen.cs" />
+    <Compile Include="Heroes\QueenOfPain\Abilities\SonicWave.cs" />
+    <Compile Include="Heroes\QueenOfPain\QueenOfPainBase.cs" />
+    <Compile Include="Heroes\QueenOfPain\Units\QueenOfPain.cs" />
+    <Compile Include="Heroes\Razor\Abilities\StaticLink.cs" />
+    <Compile Include="Heroes\Razor\RazorBase.cs" />
+    <Compile Include="Heroes\Razor\Units\Razor.cs" />
+    <Compile Include="Heroes\Riki\Abilities\SmokeScreen.cs" />
+    <Compile Include="Heroes\Riki\Abilities\TricksOfTheTrade.cs" />
+    <Compile Include="Heroes\Riki\Abilities\TricksOfTheTradeMenu.cs" />
+    <Compile Include="Heroes\Riki\RikiBase.cs" />
+    <Compile Include="Heroes\Riki\Units\Riki.cs" />
+    <Compile Include="Heroes\SandKing\Abilities\Epicenter.cs" />
+    <Compile Include="Heroes\SandKing\SandKingBase.cs" />
+    <Compile Include="Heroes\SandKing\Units\SandKing.cs" />
+    <Compile Include="Heroes\ShadowFiend\ShadowFiendBase.cs" />
+    <Compile Include="Heroes\ShadowFiend\Units\ShadowFiend.cs" />
+    <Compile Include="Heroes\ShadowShaman\Abilities\Wards.cs" />
+    <Compile Include="Heroes\ShadowShaman\ShadowShamanBase.cs" />
+    <Compile Include="Heroes\ShadowShaman\Units\ShadowShaman.cs" />
+    <Compile Include="Heroes\SkywrathMage\Abilities\HexSkywrath.cs" />
+    <Compile Include="Heroes\SkywrathMage\Abilities\MysticFlare.cs" />
+    <Compile Include="Heroes\SkywrathMage\SkywrathMageBase.cs" />
+    <Compile Include="Heroes\SkywrathMage\Units\SkywrathMage.cs" />
+    <Compile Include="Heroes\Slardar\SlardarBase.cs" />
+    <Compile Include="Heroes\Slardar\Units\Slardar.cs" />
+    <Compile Include="Heroes\Slark\Abilities\Pounce.cs" />
+    <Compile Include="Heroes\Slark\Abilities\ShadowDance.cs" />
+    <Compile Include="Heroes\Slark\SlarkBase.cs" />
+    <Compile Include="Heroes\Slark\Units\Slark.cs" />
+    <Compile Include="Heroes\Spectre\Abilities\DaggerMove.cs" />
+    <Compile Include="Heroes\Spectre\Abilities\Haunt.cs" />
+    <Compile Include="Heroes\Spectre\Abilities\Reality.cs" />
+    <Compile Include="Heroes\Spectre\SpectreBase.cs" />
+    <Compile Include="Heroes\Spectre\Units\Spectre.cs" />
+    <Compile Include="Heroes\StormSpirit\Abilities\BallLightning.cs" />
+    <Compile Include="Heroes\StormSpirit\Abilities\BallLightningMenu.cs" />
+    <Compile Include="Heroes\StormSpirit\Modes\ManaCalculatorMode.cs" />
+    <Compile Include="Heroes\StormSpirit\Modes\ManaCalculatorModeMenu.cs" />
+    <Compile Include="Heroes\StormSpirit\Modes\OverloadChargeMode.cs" />
+    <Compile Include="Heroes\StormSpirit\Modes\OverloadChargeModeMenu.cs" />
+    <Compile Include="Heroes\StormSpirit\StormSpiritBase.cs" />
+    <Compile Include="Heroes\StormSpirit\Units\StormSpirit.cs" />
+    <Compile Include="Heroes\TemplarAssassin\Abilities\PsionicTrap.cs" />
+    <Compile Include="Heroes\TemplarAssassin\Abilities\TrapExplode.cs" />
+    <Compile Include="Heroes\TemplarAssassin\TemplarAssassinBase.cs" />
+    <Compile Include="Heroes\TemplarAssassin\Units\PsionicTrap.cs" />
+    <Compile Include="Heroes\TemplarAssassin\Units\TemplarAssassin.cs" />
+    <Compile Include="Heroes\Tidehunter\Abilities\Ravage.cs" />
+    <Compile Include="Heroes\Tidehunter\TidehunterBase.cs" />
+    <Compile Include="Heroes\Tidehunter\Units\Tidehunter.cs" />
+    <Compile Include="Heroes\Timbersaw\Abilities\TimberChainBlink.cs" />
+    <Compile Include="Heroes\Tiny\Abilities\Toss.cs" />
+    <Compile Include="Heroes\Tiny\Abilities\TossMenu.cs" />
+    <Compile Include="Heroes\Tiny\Abilities\TreeGrab.cs" />
+    <Compile Include="Heroes\Tiny\Abilities\TreeThrow.cs" />
+    <Compile Include="Heroes\Tiny\Abilities\TreeVolley.cs" />
+    <Compile Include="Heroes\Tiny\Modes\TossUnderTowerMode.cs" />
+    <Compile Include="Heroes\Tiny\TinyBase.cs" />
+    <Compile Include="Heroes\Tiny\Units\Tiny.cs" />
+    <Compile Include="Heroes\TrollWarlord\TrollWarlordBase.cs" />
+    <Compile Include="Heroes\TrollWarlord\Units\TrollWarlord.cs" />
+    <Compile Include="Heroes\Tusk\Abilities\TuskBlink.cs" />
+    <Compile Include="Heroes\Tusk\Abilities\IceShards.cs" />
+    <Compile Include="Heroes\Tusk\Abilities\Kick.cs" />
+    <Compile Include="Heroes\Tusk\Abilities\KickMenu.cs" />
+    <Compile Include="Heroes\Tusk\Abilities\Snowball.cs" />
+    <Compile Include="Heroes\Tusk\Modes\KickToAllyMode.cs" />
+    <Compile Include="Heroes\Tusk\TuskBase.cs" />
+    <Compile Include="Heroes\Tusk\Units\Tusk.cs" />
+    <Compile Include="Heroes\Ursa\Abilities\Enrage.cs" />
+    <Compile Include="Heroes\Ursa\Abilities\EnrageMenu.cs" />
+    <Compile Include="Heroes\Ursa\Units\Ursa.cs" />
+    <Compile Include="Heroes\Ursa\UrsaBase.cs" />
+    <Compile Include="Heroes\VengefulSpirit\Units\VengefulSpirit.cs" />
+    <Compile Include="Heroes\VengefulSpirit\VengefulSpiritBase.cs" />
+    <Compile Include="Heroes\Venomancer\Abilities\PlagueWardAbility.cs" />
+    <Compile Include="Heroes\Venomancer\Abilities\PoisonNova.cs" />
+    <Compile Include="Heroes\Venomancer\Units\PlagueWard.cs" />
+    <Compile Include="Heroes\Venomancer\Units\Venomancer.cs" />
+    <Compile Include="Heroes\Venomancer\VenomancerBase.cs" />
+    <Compile Include="Heroes\VoidSpirit\Abilities\AetherRemnant.cs" />
+    <Compile Include="Heroes\VoidSpirit\Abilities\Dissimilate.cs" />
+    <Compile Include="Heroes\VoidSpirit\Units\VoidSpirit.cs" />
+    <Compile Include="Heroes\VoidSpirit\VoidSpiritBase.cs" />
+    <Compile Include="Heroes\Warlock\Abilities\ChaoticOffering.cs" />
+    <Compile Include="Heroes\Warlock\Abilities\FatalBonds.cs" />
+    <Compile Include="Heroes\Warlock\Units\Warlock.cs" />
+    <Compile Include="Heroes\Warlock\WarlockBase.cs" />
+    <Compile Include="Heroes\Weaver\Modes\HealthTrackerMode.cs" />
+    <Compile Include="Heroes\Weaver\WeaverBase.cs" />
+    <Compile Include="Heroes\Morphling\MorphlingBase.cs" />
+    <Compile Include="Heroes\Morphling\Units\Morphling.cs" />
+    <Compile Include="Heroes\Oracle\Abilities\FortunesEnd.cs" />
+    <Compile Include="Heroes\Oracle\Abilities\FortunesEndMenu.cs" />
+    <Compile Include="Heroes\Oracle\Abilities\PurifyingFlames.cs" />
+    <Compile Include="Heroes\Oracle\Modes\HealAllyMode.cs" />
+    <Compile Include="Heroes\Oracle\OracleBase.cs" />
+    <Compile Include="Heroes\Oracle\Units\Oracle.cs" />
+    <Compile Include="Heroes\Pudge\Abilities\BlinkDaggerPudge.cs" />
+    <Compile Include="Heroes\Pudge\Abilities\Dismember.cs" />
+    <Compile Include="Heroes\Pudge\Abilities\MeatHook.cs" />
+    <Compile Include="Heroes\Pudge\Abilities\Rot.cs" />
+    <Compile Include="Heroes\Pudge\Modes\HookAllyMode.cs" />
+    <Compile Include="Heroes\Pudge\PudgeBase.cs" />
+    <Compile Include="Heroes\Pudge\Units\Pudge.cs" />
+    <Compile Include="Heroes\SpiritBreaker\Abilities\ChargeOfDarkness.cs" />
+    <Compile Include="Heroes\SpiritBreaker\Modes\ChargeAwayMode.cs" />
+    <Compile Include="Heroes\SpiritBreaker\SpiritBreakerBase.cs" />
+    <Compile Include="Heroes\SpiritBreaker\Units\SpiritBreaker.cs" />
+    <Compile Include="Heroes\Timbersaw\Abilities\Chakram.cs" />
+    <Compile Include="Heroes\Timbersaw\Abilities\TimberChain.cs" />
+    <Compile Include="Heroes\Timbersaw\Abilities\BlinkDaggerTimbersaw.cs" />
+    <Compile Include="Heroes\Timbersaw\TimbersawBase.cs" />
+    <Compile Include="Heroes\Timbersaw\Units\Timbersaw.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\BlinkDaggerWindranger.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\FocusFire.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\Powershot.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\Shackleshot.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\ShackleshotMenu.cs" />
+    <Compile Include="Heroes\Windranger\Abilities\Windrun.cs" />
+    <Compile Include="Heroes\Windranger\Units\Windranger.cs" />
+    <Compile Include="Heroes\Windranger\WindrangerBase.cs" />
+    <Compile Include="KillStealer\Abilities\Base\KillStealAbility.cs" />
+    <Compile Include="KillStealer\Abilities\MysticFlare.cs" />
+    <Compile Include="KillStealer\Abilities\ReapersScythe.cs" />
+    <Compile Include="KillStealer\Abilities\ShadowWave.cs" />
+    <Compile Include="KillStealer\Abilities\Swashbuckle.cs" />
+    <Compile Include="KillStealer\KIllSteal.cs" />
+    <Compile Include="KillStealer\KIllStealMenu.cs" />
+    <Compile Include="Menu\MenuManager.cs" />
+    <Compile Include="Modes\Base\BaseModeMenu.cs" />
+    <Compile Include="Modes\Combo\ComboMode.cs" />
+    <Compile Include="Modes\Combo\ComboModeMenu.cs" />
+    <Compile Include="Modes\Combo\IComboModeMenu.cs" />
+    <Compile Include="Modes\KeyPress\KeyPressAllyMode.cs" />
+    <Compile Include="Modes\KeyPress\KeyPressMode.cs" />
+    <Compile Include="Modes\Base\BaseMode.cs" />
+    <Compile Include="Modes\KeyPress\KeyPressModeMenu.cs" />
+    <Compile Include="Heroes\Base\ControllableUnitMenu.cs" />
+    <Compile Include="Modes\MoveCombo\MoveComboMode.cs" />
+    <Compile Include="Modes\MoveCombo\MoveComboModeMenu.cs" />
+    <Compile Include="Modes\Permanent\PermanentMode.cs" />
+    <Compile Include="Modes\Permanent\PermanentModeMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShieldBreaker\ShieldBreaker.cs" />
+    <Compile Include="ShieldBreaker\ShieldBreakerMenu.cs" />
+    <Compile Include="TargetManager\TargetManager.cs" />
+    <Compile Include="TargetManager\TargetManagerMenu.cs" />
+    <Compile Include="Heroes\Base\ControllableUnit.cs" />
+    <Compile Include="Heroes\Morphling\MorplingUnitManager.cs" />
+    <Compile Include="UnitManager\UnitManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
