@@ -55,6 +55,47 @@
             Entity.OnInt32PropertyChange += this.OnInt32PropertyChange;
             ObjectManager.OnAddEntity += OnAddEntity;
             ObjectManager.OnRemoveEntity += OnRemoveEntity;
+
+            Game.OnUpdate += GameOnUpdate;
+        }
+
+        private readonly HashSet<uint> abilitiesInPhase = new HashSet<uint>();
+
+        private void GameOnUpdate(EventArgs args)
+        {
+            //hack
+            try
+            {
+                foreach (var ability in EntityManager9.Abilities.OfType<ActiveAbility>())
+                {
+                    if (!ability.Owner.IsAlive || !ability.Owner.IsVisible)
+                    {
+                        continue;
+                    }
+
+                    if (ability.BaseAbility.IsInAbilityPhase)
+                    {
+                        if (this.abilitiesInPhase.Add(ability.Handle))
+                        {
+                            ability.Owner.IsCasting = ability.IsCasting = true;
+                            this.AbilityCastChange?.Invoke(ability);
+                        }
+                    }
+                    else
+                    {
+                        if (this.abilitiesInPhase.Remove(ability.Handle))
+                        {
+                            ability.Owner.IsCasting = ability.IsCasting = false;
+                            this.AbilityCastChange?.Invoke(ability);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
         public delegate void EventHandler(Ability9 ability);
@@ -200,20 +241,20 @@
                         this.AbilityCasted?.Invoke(ability);
                         break;
                     }
-                    case "m_bInAbilityPhase":
-                    {
-                        var ability = EntityManager9.GetAbilityFast(sender.Handle);
-                        if (ability == null)
-                        {
-                            return;
-                        }
+                    //case "m_bInAbilityPhase":
+                    //{
+                    //    var ability = EntityManager9.GetAbilityFast(sender.Handle);
+                    //    if (ability == null)
+                    //    {
+                    //        return;
+                    //    }
 
-                        ability.IsCasting = newValue;
-                        ability.Owner.IsCasting = newValue;
+                    //    ability.IsCasting = newValue;
+                    //    ability.Owner.IsCasting = newValue;
 
-                        this.AbilityCastChange?.Invoke(ability);
-                        break;
-                    }
+                    //    this.AbilityCastChange?.Invoke(ability);
+                    //    break;
+                    //}
                 }
             }
             catch (Exception e)
