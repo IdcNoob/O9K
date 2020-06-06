@@ -254,16 +254,16 @@
             {
                 case "particles/items2_fx/teleport_start.vpcf":
                 case "particles/econ/items/tinker/boots_of_travel/teleport_start_bots.vpcf":
-                case "particles/econ/events/ti9/teleport_start_ti9.vpcf":
-                case "particles/econ/events/ti9/teleport_start_ti9_lvl2.vpcf":
-                case "particles/econ/events/ti9/teleport_start_ti9_lvl3.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_start_ti10.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_start_ti10_lvl2.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_start_ti10_lvl3.vpcf":
                     UpdateManager.BeginInvoke(() => this.CheckTeleport(args.ParticleEffect, true), 100);
                     break;
                 case "particles/items2_fx/teleport_end.vpcf":
                 case "particles/econ/items/tinker/boots_of_travel/teleport_end_bots.vpcf":
-                case "particles/econ/events/ti9/teleport_end_ti9.vpcf":
-                case "particles/econ/events/ti9/teleport_end_ti9_lvl2.vpcf":
-                case "particles/econ/events/ti9/teleport_end_ti9_lvl3.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_end_ti10.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_end_ti10_lvl2.vpcf":
+                case "particles/econ/events/ti10/teleport/teleport_end_ti10_lvl3.vpcf":
                     UpdateManager.BeginInvoke(() => this.CheckTeleport(args.ParticleEffect, false));
                     break;
                 //default:
