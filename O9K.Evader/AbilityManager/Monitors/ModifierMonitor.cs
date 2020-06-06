@@ -44,7 +44,7 @@
             { "modifier_keeper_of_the_light_mana_leak", AbilityId.keeper_of_the_light_chakra_magic },
             { "modifier_monkey_king_quadruple_tap_bonuses", AbilityId.monkey_king_jingu_mastery },
             { "modifier_snapfire_magma_burn_slow", AbilityId.snapfire_mortimer_kisses },
-            { "modifier_clumsy_net_ensnare", AbilityId.item_clumsy_net },
+            { "modifier_ember_spirit_sleight_of_fist_marker", AbilityId.ember_spirit_sleight_of_fist },
 
             { "modifier_eul_cyclone", AbilityId.item_cyclone },
             { "modifier_sheepstick_debuff", AbilityId.item_sheepstick },
@@ -60,6 +60,7 @@
             { "modifier_boots_of_travel_incoming", AbilityId.item_travel_boots },
             { "modifier_flask_healing", AbilityId.item_flask },
             { "modifier_clarity_potion", AbilityId.item_clarity },
+            { "modifier_clumsy_net_ensnare", AbilityId.item_clumsy_net },
 
             // force 
             { "item_glimmer_cape", AbilityId.ability_base },
@@ -118,6 +119,11 @@
         };
 
         private readonly List<EvadableAbility> evadable;
+
+        private readonly HashSet<string> forcedHiddenModifiers = new HashSet<string>
+        {
+            "modifier_ember_spirit_sleight_of_fist_marker"
+        };
 
         private readonly Owner owner;
 
@@ -206,7 +212,7 @@
                     return;
                 }
 
-                if (!this.settingsMenu.ModifierCounter || modifier.IsHidden)
+                if (!this.settingsMenu.ModifierCounter || (modifier.IsHidden && !this.forcedHiddenModifiers.Contains(modifier.Name)))
                 {
                     return;
                 }
