@@ -52,11 +52,83 @@
         {
             Entity.OnBoolPropertyChange += this.OnBoolPropertyChange;
             Entity.OnFloatPropertyChange += this.OnFloatPropertyChange;
-            Entity.OnInt32PropertyChange += this.OnInt32PropertyChange;
+          //  Entity.OnInt32PropertyChange += this.OnInt32PropertyChange;
             ObjectManager.OnAddEntity += OnAddEntity;
             ObjectManager.OnRemoveEntity += OnRemoveEntity;
 
-            Game.OnUpdate += GameOnUpdate;
+            UpdateManager.Subscribe(this.GameOnUpdate2, 500);
+            Game.OnUpdate += this.GameOnUpdate;
+        }
+
+        private void GameOnUpdate2()
+        {
+            //hack
+            try
+            {
+                foreach (var unit in EntityManager9.Units.Where(x => x.IsVisible))
+                {
+                    var inventory = unit.BaseUnit?.Inventory;
+                    if (inventory == null)
+                    {
+                        continue;
+                    }
+
+                    var checkedItems = new List<uint>();
+
+                    foreach (var handle in this.GetInventoryItems(inventory).Select(x => x.Handle))
+                    {
+                        var item = EntityManager9.GetAbilityFast(handle);
+                        if (item == null)
+                        {
+                            continue;
+                        }
+
+                        checkedItems.Add(handle);
+
+                        if (item.Owner == unit)
+                        {
+                            item.IsAvailable = true;
+                            continue;
+                        }
+
+                        EntityManager9.RemoveAbility(item.BaseAbility);
+                        EntityManager9.AddAbility(item.BaseAbility);
+                    }
+
+                    
+                    foreach (var handle in this.GetStashItems(inventory).Select(x => x.Handle))
+                    {
+                        var item = EntityManager9.GetAbilityFast(handle);
+                        if (item == null)
+                        {
+                            continue;
+                        }
+
+                        checkedItems.Add(handle);
+
+                        if (item.Owner == unit)
+                        {
+                            item.IsAvailable = false;
+                            continue;
+                        }
+
+                        EntityManager9.RemoveAbility(item.BaseAbility);
+                        EntityManager9.AddAbility(item.BaseAbility);
+                    }
+
+                    // stashed neutral items
+                    foreach (var item in unit.AbilitiesFast.Where(
+                        x => x.IsItem && x.IsAvailable && !checkedItems.Contains(x.Handle)))
+                    {
+                        item.IsAvailable = false;
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
         private readonly HashSet<uint> abilitiesInPhase = new HashSet<uint>();
