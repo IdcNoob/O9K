@@ -76,7 +76,6 @@
     <Compile Include="Modules\AbilityLeveling\Names\Abilities.cs" />
     <Compile Include="Modules\AbilityLeveling\Names\Heroes.cs" />
     <Compile Include="Modules\AbilityLeveling\Names\NameManager.cs" />
-    <Compile Include="Modules\AbyssalAbuse.cs" />
     <Compile Include="Modules\AutoActions\ItemSwap.cs" />
     <Compile Include="Modules\AutoActions\MinesDestroyer.cs" />
     <Compile Include="Modules\AutoActions\PowerTreads.cs" />
