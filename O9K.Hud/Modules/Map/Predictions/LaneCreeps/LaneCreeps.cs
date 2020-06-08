@@ -88,6 +88,8 @@
             this.lanePaths = new LanePaths();
 
             this.enabled.ValueChange += this.EnabledOnValueChange;
+
+            this.spawnSleeper.Sleep(Math.Abs(Math.Min(Game.GameTime, 0)) - 0.5f);
         }
 
         public void Dispose()
@@ -119,7 +121,8 @@
                 EntityManager9.UnitAdded += this.OnUnitAdded;
                 EntityManager9.UnitRemoved += this.OnUnitRemoved;
                 EntityManager9.UnitMonitor.UnitDied += this.OnUnitRemoved;
-                Entity.OnBoolPropertyChange += this.OnBoolPropertyChange;
+                //Entity.OnBoolPropertyChange += this.OnBoolPropertyChange;
+                UpdateManager.Subscribe(this.OnUpdateTime, 300);
                 UpdateManager.Subscribe(this.OnUpdate);
                 this.context.Renderer.Draw += this.OnDraw;
             }
@@ -129,9 +132,37 @@
                 EntityManager9.UnitAdded -= this.OnUnitAdded;
                 EntityManager9.UnitRemoved -= this.OnUnitRemoved;
                 EntityManager9.UnitMonitor.UnitDied -= this.OnUnitRemoved;
-                Entity.OnBoolPropertyChange -= this.OnBoolPropertyChange;
+                //Entity.OnBoolPropertyChange -= this.OnBoolPropertyChange;
+                UpdateManager.Unsubscribe(this.OnUpdateTime);
                 UpdateManager.Unsubscribe(this.OnUpdate);
                 this.creepWaves.Clear();
+            }
+        }
+
+        private void OnUpdateTime()
+        {
+            try
+            {
+                //hack again...
+
+                if (this.spawnSleeper)
+                {
+                    return;
+                }
+
+                if (Game.GameTime % 30 < 1)
+                {
+                    foreach (var creepWave in this.creepWaves.Where(x => !x.IsSpawned))
+                    {
+                        creepWave.Spawn();
+                    }
+
+                    this.spawnSleeper.Sleep(25);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
             }
         }
 
