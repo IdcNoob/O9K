@@ -11,13 +11,12 @@
 
     using Metadata;
 
-    [AbilityId(AbilityId.item_magic_stick)]
-    [AbilityId(AbilityId.item_magic_wand)]
-    public class MagicWand : ActiveAbility, IHealthRestore, IManaRestore
+    [AbilityId(AbilityId.item_holy_locket)]
+    public class HolyLocket : RangedAbility, IHealthRestore, IManaRestore
     {
         private readonly SpecialData restoreData;
 
-        public MagicWand(Ability baseAbility)
+        public HolyLocket(Ability baseAbility)
             : base(baseAbility)
         {
             this.restoreData = new SpecialData(baseAbility, "restore_per_charge");
@@ -25,9 +24,11 @@
 
         public bool InstantRestore { get; } = true;
 
+        public override bool IsDisplayingCharges { get; } = true;
+
         public string RestoreModifierName { get; } = string.Empty;
 
-        public bool RestoresAlly { get; } = false;
+        public bool RestoresAlly { get; } = true;
 
         public bool RestoresOwner { get; } = true;
 

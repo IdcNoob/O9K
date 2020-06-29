@@ -252,6 +252,7 @@
     <Compile Include="Entities\Abilities\Items\BladeOfAlacrity.cs" />
     <Compile Include="Entities\Abilities\Items\BladesOfAttack.cs" />
     <Compile Include="Entities\Abilities\Items\BlightStone.cs" />
+    <Compile Include="Entities\Abilities\Items\BlitzKnuckles.cs" />
     <Compile Include="Entities\Abilities\Items\BootsOfSpeed.cs" />
     <Compile Include="Entities\Abilities\Items\Bottle.cs" />
     <Compile Include="Entities\Abilities\Items\Bracer.cs" />
@@ -279,6 +280,7 @@
     <Compile Include="Entities\Abilities\Items\HeartOfTarrasque.cs" />
     <Compile Include="Entities\Abilities\Items\HelmOfIronWill.cs" />
     <Compile Include="Entities\Abilities\Items\HelmOfOheDominator.cs" />
+    <Compile Include="Entities\Abilities\Items\HolyLocket.cs" />
     <Compile Include="Entities\Abilities\Items\Hyperstone.cs" />
     <Compile Include="Entities\Abilities\Items\IronBranch.cs" />
     <Compile Include="Entities\Abilities\Items\Javelin.cs" />
@@ -334,6 +336,7 @@
     <Compile Include="Entities\Abilities\Items\VitalityBooster.cs" />
     <Compile Include="Entities\Abilities\Items\VladmirsOffering.cs" />
     <Compile Include="Entities\Abilities\Items\VoidStone.cs" />
+    <Compile Include="Entities\Abilities\Items\VoodooMask.cs" />
     <Compile Include="Entities\Abilities\Items\WardDispenser.cs" />
     <Compile Include="Entities\Abilities\Items\WindLace.cs" />
     <Compile Include="Entities\Abilities\Items\WraithBand.cs" />
@@ -401,8 +404,6 @@
     <Compile Include="Entities\Abilities\Units\AncientBlackDragon\Fireball.cs" />
     <Compile Include="Entities\Abilities\Units\AncientBlackDragon\SplashAttack.cs" />
     <Compile Include="Entities\Abilities\Units\AncientGraniteGolem\GraniteAura.cs" />
-    <Compile Include="Entities\Abilities\Units\AncientProwlerShaman\Desecrate.cs" />
-    <Compile Include="Entities\Abilities\Units\AncientProwlerShaman\Petrify.cs" />
     <Compile Include="Entities\Abilities\Units\AncientThunderhide\Frenzy.cs" />
     <Compile Include="Entities\Abilities\Units\AncientThunderhide\Slam.cs" />
     <Compile Include="Entities\Abilities\Units\AncientThunderhide\WarDrumsAura.cs" />

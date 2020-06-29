@@ -974,10 +974,6 @@
     <Compile Include="Abilities\Items\VeilOfDiscord\VeilOfDiscordEvadable.cs" />
     <Compile Include="Abilities\Units\AncientBlackDragon\Fireball\FireballBase.cs" />
     <Compile Include="Abilities\Units\AncientBlackDragon\Fireball\FireballEvadable.cs" />
-    <Compile Include="Abilities\Units\AncientProwlerShaman\Desecrate\DesecrateBase.cs" />
-    <Compile Include="Abilities\Units\AncientProwlerShaman\Desecrate\DesecrateEvadable.cs" />
-    <Compile Include="Abilities\Units\AncientProwlerShaman\Petrify\PetrifyBase.cs" />
-    <Compile Include="Abilities\Units\AncientProwlerShaman\Petrify\PetrifyEvadable.cs" />
     <Compile Include="Abilities\Units\AncientThunderhide\Slam\SlamBase.cs" />
     <Compile Include="Abilities\Units\AncientThunderhide\Slam\SlamEvadable.cs" />
     <Compile Include="Abilities\Units\CentaurConqueror\WarStomp\WarStompBase.cs" />

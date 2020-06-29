@@ -18,7 +18,7 @@
         {
             this.ModifierCounters.Add(Abilities.PhaseShift);
             this.ModifierCounters.Add(Abilities.Doppelganger);
-            this.Counters.UnionWith(Abilities.PhysShield);
+            this.ModifierCounters.UnionWith(Abilities.PhysShield);
             this.ModifierCounters.Add(Abilities.Armlet);
         }
 

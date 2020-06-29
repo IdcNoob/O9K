@@ -83,7 +83,7 @@
 
             if (ability.IsItem)
             {
-                itemsToggler.AddAbility(ability.Id);
+                itemsToggler.AddAbility(ability.Name);
                 hudAbility.ChangeEnabled(itemsToggler.IsEnabled(ability.Name));
                 this.items.Add(hudAbility);
             }

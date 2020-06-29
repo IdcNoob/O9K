@@ -56,8 +56,7 @@
             "npc_dota_neutral_polar_furbolg_ursa_warrior",
             "npc_dota_neutral_big_thunder_lizard",
             "npc_dota_neutral_black_dragon",
-            "npc_dota_neutral_granite_golem",
-            "npc_dota_neutral_prowler_shaman"
+            "npc_dota_neutral_granite_golem"
         };
 
         private readonly Dictionary<Vector3, float> stacks = new Dictionary<Vector3, float>();

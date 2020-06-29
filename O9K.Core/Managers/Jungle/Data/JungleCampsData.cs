@@ -17,7 +17,7 @@
                 {
                     Id = 1,
                     Team = Team.Radiant,
-                    IsMedium = true,
+                    IsLarge = true,
                     CreepsPosition = new Vector3(-3984, 1291, 384),
                     DrawPosition = new Vector3(-4349, 1206, 255),
                     StackTime = 54
@@ -26,7 +26,7 @@
                 {
                     Id = 2,
                     Team = Team.Radiant,
-                    IsLarge = true,
+                    IsAncient = true,
                     CreepsPosition = new Vector3(-4945, -417, 384),
                     DrawPosition = new Vector3(-5091, -51, 384),
                     StackTime = 56,
@@ -35,7 +35,7 @@
                 {
                     Id = 3,
                     Team = Team.Radiant,
-                    IsLarge = true,
+                    IsSmall = true,
                     CreepsPosition = new Vector3(-2543, -583, 256),
                     DrawPosition = new Vector3(-2821, -782, 256),
                     StackTime = 55,
@@ -71,7 +71,7 @@
                 {
                     Id = 7,
                     Team = Team.Radiant,
-                    IsAncient = true,
+                    IsLarge = true,
                     CreepsPosition = new Vector3(1272, -5322, 384),
                     DrawPosition = new Vector3(887, -5406, 384),
                     StackTime = 55,
@@ -81,7 +81,7 @@
                     Id = 8,
                     Team = Team.Radiant,
                     IsSmall = true,
-                    CreepsPosition = new Vector3(3010, -4452, 256),
+                    CreepsPosition = new Vector3(3066, -4549, 128),
                     DrawPosition = new Vector3(2835, -4632, 256),
                     StackTime = 55,
                 },
@@ -154,7 +154,7 @@
                 {
                     Id = 16,
                     Team = Team.Dire,
-                    IsMedium = true,
+                    IsSmall = true,
                     CreepsPosition = new Vector3(2094, -318, 256),
                     DrawPosition = new Vector3(2214, -53, 256),
                     StackTime = 55,
