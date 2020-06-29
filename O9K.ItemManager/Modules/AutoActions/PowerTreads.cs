@@ -98,8 +98,8 @@
             this.intToggler.AddTranslation(Lang.Cn, "智力");
 
             this.agiToggler = menu.Add(new MenuAbilityToggler("Agility"));
-            this.agiToggler.AddTranslation(Lang.Ru, "Агила");
-            this.agiToggler.AddTranslation(Lang.Cn, "敏捷");
+            this.intToggler.AddTranslation(Lang.Ru, "Агила");
+            this.intToggler.AddTranslation(Lang.Cn, "敏捷");
 
             // get recovery key
             this.recoveryKey = mainMenu.RecoveryAbuseMenu.GetOrAdd(new MenuHoldKey("Key"));
