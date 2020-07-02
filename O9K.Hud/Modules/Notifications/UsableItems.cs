@@ -28,7 +28,8 @@
         private readonly HashSet<AbilityId> abilityIds = new HashSet<AbilityId>
         {
             AbilityId.item_trusty_shovel,
-            AbilityId.item_hand_of_midas
+            AbilityId.item_hand_of_midas,
+            AbilityId.item_pirate_hat
         };
 
         private readonly IContext9 context;
@@ -136,6 +137,7 @@
                         scale = 2 - scale;
                     }
 
+                    renderer.DrawTexture("o9k.outline_green", position * scale * 1.3f);
                     renderer.DrawTexture(ability.TextureName + "_rounded", position * scale);
                 }
             }
