@@ -1041,14 +1041,13 @@
 
         public virtual float GetImmobilityDuration()
         {
-            var modifiers = this.immobilityModifiers.Where(x => x.IsValid /*&& x.ElapsedTime > 0.1f*/).ToList();
+            var modifiers = this.immobilityModifiers.Where(x => x.IsValid && x.ElapsedTime > 0.1f).ToList();
             if (modifiers.Count == 0)
             {
                 return 0;
             }
 
-            // hack must be RemainingTime, but ensage core will never be updated :FeelsBadMan:
-            return modifiers.Max(x => x.ElapsedTime);
+            return modifiers.Max(x => x.RemainingTime);
         }
 
         public virtual float GetInvulnerabilityDuration()
